@@ -10,7 +10,7 @@ import UIKit
 /// Экран продукта
 final class ProductViewController: UIViewController {
     
-    // MARK: - Visual Components
+    // MARK: - Private visual Components
     
     private lazy var productNameLabel = makeProductNameLabel()
     private lazy var productImage = makeProductImageView()

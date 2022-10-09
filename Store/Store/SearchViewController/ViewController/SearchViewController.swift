@@ -28,7 +28,7 @@ final class SearchViewController: UIViewController {
         static let caseBrownImageName = "caseBrownFront"
     }
     
-    // MARK: - Visual Components
+    // MARK: - Private visual Components
     
     private lazy var serchBar = makeSearchBar()
     private lazy var recentlyWatchedLabel = makeBoldLabel(text: Constants.recentlyWatchedLabelText, yCoordinate: 224)
@@ -50,7 +50,7 @@ final class SearchViewController: UIViewController {
     
     // MARK: - Private methods
     
-    @objc private func openProductViewController(_ sender: UITapGestureRecognizer) {
+    @objc private func openProductViewControllerAction(_ sender: UITapGestureRecognizer) {
         guard let selectView = sender.view,
               selectView.tag < products.count else { return }
         
@@ -157,7 +157,7 @@ private extension SearchViewController {
         view.frame = CGRect(x: xCoordinate, y: 269, width: 138, height: 187)
         view.layer.cornerRadius = 15
         view.tag = tag
-        let tap = UITapGestureRecognizer(target: self, action: #selector(openProductViewController))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(openProductViewControllerAction))
         view.addGestureRecognizer(tap)
         return view
     }
