@@ -8,5 +8,6 @@
 /// Модель описание продукта
 struct Product {
     let name: String
-    let imageName: String
+    let imageNames: [String]
+    let price: String
 }

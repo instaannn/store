@@ -21,11 +21,17 @@ final class SearchViewController: UIViewController {
         static let searchBarPlaceholderText = "Поиск по продуктам и магазинам"
         static let clearButtonTitle = "Очистить"
         static let caseBlackName = "Чехол Incase Flat для MacBook Pro 16 дюймов"
-        static let caseBlackImageName = "caseBlackFront"
+        static let caseBlackImageNames = ["caseBlackFront", "caseBlack2", "caseBlack3"]
+        static let caseBlackPrice = "3 990.00 руб."
         static let sportStrapName = "Спортивный ремешок Black Unity (для занятий спортом)"
-        static let sportStrapImageName = "sportStrap"
+        static let sportStrapImageNames = ["sportStrap", "sportStrap2"]
+        static let sportStrapPrice = "2 990.00 руб."
         static let caseBrownName = "Кожаный чехол для MacBook Pro, 16 дюймов, золотой"
-        static let caseBrownImageName = "caseBrownFront"
+        static let caseBrownImageNames = ["caseBrownFront", "caseBrown2", "caseBrown3"]
+        static let caseBrownPrice = "3 990.00 руб."
+        static let iPhoneName = "iPhone 12 pro Max"
+        static let iPhoneImageNames = ["iphone", "iphoneFull"]
+        static let iPhonePrice = "333 990.00 руб."
     }
     
     // MARK: - Private visual Components
@@ -34,10 +40,31 @@ final class SearchViewController: UIViewController {
     private lazy var recentlyWatchedLabel = makeBoldLabel(text: Constants.recentlyWatchedLabelText, yCoordinate: 224)
     private lazy var clearButton = makeClearButton()
     private lazy var requestOptionsLabel = makeBoldLabel(text: Constants.requestOptionsLabelText, yCoordinate: 499)
+    private lazy var scrollView = makeScrollView()
+    
+    // MARK: - Private properties
+
     private let products = [
-        Product(name: Constants.caseBlackName, imageName: Constants.caseBlackImageName),
-        Product(name: Constants.sportStrapName, imageName: Constants.sportStrapImageName),
-        Product(name: Constants.caseBrownName, imageName: Constants.caseBrownImageName)
+        Product(
+            name: Constants.caseBlackName,
+            imageNames: Constants.caseBlackImageNames,
+            price: Constants.caseBlackPrice
+        ),
+        Product(
+            name: Constants.sportStrapName,
+            imageNames: Constants.sportStrapImageNames,
+            price: Constants.sportStrapPrice
+        ),
+        Product(
+            name: Constants.caseBrownName,
+            imageNames: Constants.caseBrownImageNames,
+            price: Constants.caseBrownPrice
+        ),
+        Product(
+            name: Constants.iPhoneName,
+            imageNames: Constants.iPhoneImageNames,
+            price: Constants.iPhonePrice
+        )
     ]
 
     // MARK: - Lifecycle
@@ -53,10 +80,8 @@ final class SearchViewController: UIViewController {
     @objc private func openProductViewControllerAction(_ sender: UITapGestureRecognizer) {
         guard let selectView = sender.view,
               selectView.tag < products.count else { return }
-        
         let productViewController = ProductViewController()
-        productViewController.imageName = products[selectView.tag].imageName
-        productViewController.name = products[selectView.tag].name
+        productViewController.product = products[selectView.tag]
         navigationController?.pushViewController(productViewController, animated: true)
     }
 }
@@ -70,6 +95,7 @@ private extension SearchViewController {
         view.addSubview(recentlyWatchedLabel)
         view.addSubview(clearButton)
         view.addSubview(requestOptionsLabel)
+        view.addSubview(scrollView)
         
         setupNavigationController()
         makeRequestOptions(yCoordinateConstant: 51)
@@ -184,11 +210,18 @@ private extension SearchViewController {
         var xCoordinateBackgroundView = 21
         for (index, product) in products.enumerated() {
             let productBackgroundView = makeProductBackgroundView(xCoordinate: xCoordinateBackgroundView, tag: index)
-            let productImageView = makeProductImageView(named: product.imageName)
+            let productImageView = makeProductImageView(named: product.imageNames.first ?? "")
             let productNameLabel = makeProductNameLabel(text: product.name)
-            view.addSubview(productBackgroundView)
+            scrollView.addSubview(productBackgroundView)
             [productImageView, productNameLabel].forEach { productBackgroundView.addSubview($0) }
             xCoordinateBackgroundView += 147
         }
+    }
+    
+    func makeScrollView() -> UIScrollView {
+        let scrollView = UIScrollView(frame: view.bounds)
+        scrollView.contentSize = CGSize(width: 609, height: 187)
+        scrollView.showsHorizontalScrollIndicator = false
+        return scrollView
     }
 }
