@@ -58,14 +58,14 @@ final class ProductViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setGradientBackground()
         setupColorNavigationBar(onThisNavigation: false)
-        super.viewWillAppear(animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        setupColorNavigationBar(onThisNavigation: true)
         super.viewWillDisappear(animated)
+        setupColorNavigationBar(onThisNavigation: true)
     }
 }
 
@@ -160,7 +160,7 @@ private extension ProductViewController {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorTop, colorBottom]
         gradientLayer.locations = [0.0, 1.0]
-        gradientLayer.frame = self.darkGrayColorButton.bounds
+        gradientLayer.frame = darkGrayColorButton.bounds
         gradientLayer.cornerRadius = 17
         darkGrayColorButton.layer.insertSublayer(gradientLayer, at: 0)
     }
