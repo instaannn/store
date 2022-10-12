@@ -23,15 +23,19 @@ final class SearchViewController: UIViewController {
         static let caseBlackName = "Чехол Incase Flat для MacBook Pro 16 дюймов"
         static let caseBlackImageNames = ["caseBlackFront", "caseBlack2", "caseBlack3"]
         static let caseBlackPrice = "3 990.00 руб."
+        static let caseBlackUrl = "https://re-store.ru/catalog/BFTMB13-BK/"
         static let sportStrapName = "Спортивный ремешок Black Unity (для занятий спортом)"
         static let sportStrapImageNames = ["sportStrap", "sportStrap2"]
         static let sportStrapPrice = "2 990.00 руб."
+        static let sportStrapUrl = "https://re-store.ru/catalog/MJ4V3ZM-A/"
         static let caseBrownName = "Кожаный чехол для MacBook Pro, 16 дюймов, золотой"
         static let caseBrownImageNames = ["caseBrownFront", "caseBrown2", "caseBrown3"]
         static let caseBrownPrice = "3 990.00 руб."
+        static let caseBrownUrl = "https://re-store.ru/catalog/BST755117/"
         static let iPhoneName = "iPhone 12 pro Max"
         static let iPhoneImageNames = ["iphone", "iphoneFull"]
         static let iPhonePrice = "333 990.00 руб."
+        static let iPhoneUrl = "https://re-store.ru/catalog/10112128BLU/"
     }
     
     // MARK: - Private visual Components
@@ -49,25 +53,25 @@ final class SearchViewController: UIViewController {
             name: Constants.caseBlackName,
             imageNames: Constants.caseBlackImageNames,
             price: Constants.caseBlackPrice,
-            url: "https://re-store.ru/catalog/BFTMB13-BK/"
+            url: Constants.caseBlackUrl
         ),
         Product(
             name: Constants.sportStrapName,
             imageNames: Constants.sportStrapImageNames,
             price: Constants.sportStrapPrice,
-            url: "https://re-store.ru/catalog/MJ4V3ZM-A/"
+            url: Constants.sportStrapUrl
         ),
         Product(
             name: Constants.caseBrownName,
             imageNames: Constants.caseBrownImageNames,
             price: Constants.caseBrownPrice,
-            url: "https://re-store.ru/catalog/BST755117/"
+            url: Constants.caseBrownUrl
         ),
         Product(
             name: Constants.iPhoneName,
             imageNames: Constants.iPhoneImageNames,
             price: Constants.iPhonePrice,
-            url: "https://re-store.ru/catalog/10112128BLU/"
+            url: Constants.iPhoneUrl
         )
     ]
 

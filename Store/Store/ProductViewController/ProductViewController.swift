@@ -25,6 +25,8 @@ final class ProductViewController: UIViewController {
         static let rightBarButtonItemHeart = "heart"
         static let rightBarButtonItemSquare = "square.and.arrow.up"
         static let infoButtonImageViewName = "info.circle"
+        static let pdfName = "Chistaya_arkhitektura"
+        static let pdfExtension = "pdf"
     }
     
     // MARK: - Private visual Components
@@ -78,7 +80,7 @@ final class ProductViewController: UIViewController {
     }
     
     @objc private func infoButtonAction() {
-        guard let url = Bundle.main.url(forResource: "Chistaya_arkhitektura", withExtension: "pdf") else { return }
+        guard let url = Bundle.main.url(forResource: Constants.pdfName, withExtension: Constants.pdfExtension) else { return }
         goToWebViewController(url: "\(url)")
     }
     

@@ -11,15 +11,23 @@ import WebKit
 /// Экран вебвью
 final class WebViewController: UIViewController {
     
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let backButtonItemName = "chevron.left"
+        static let forwardButtonItemName = "chevron.right"
+        static let shareButtonItemName = "square.and.arrow.up"
+    }
+    
     // MARK: - Private visual Components
     
     private lazy var webView = WKWebView()
     private lazy var toolBar = UIToolbar()
-    private lazy var backButtonItem = makeButtonItem(systemName: "chevron.left")
-    private lazy var forwardButtonItem = makeButtonItem(systemName: "chevron.right")
+    private lazy var backButtonItem = makeButtonItem(systemName: Constants.backButtonItemName)
+    private lazy var forwardButtonItem = makeButtonItem(systemName: Constants.forwardButtonItemName)
     private lazy var spacer = UIBarButtonItem(systemItem: .flexibleSpace)
     private lazy var refreshButtonItem = UIBarButtonItem(systemItem: .refresh)
-    private lazy var shareButtonItem = makeButtonItem(systemName: "square.and.arrow.up")
+    private lazy var shareButtonItem = makeButtonItem(systemName: Constants.shareButtonItemName)
     private lazy var progressView = UIProgressView(progressViewStyle: .default)
     private lazy var progressViewItem = UIBarButtonItem(customView: progressView)
     
@@ -35,21 +43,9 @@ final class WebViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
-
-        observation = webView.observe(\.estimatedProgress, options: [.new]) { _, _ in
-            self.progressView.progress = Float(self.webView.estimatedProgress)
-            if self.progressView.progress == 1.0 {
-                self.progressView.isHidden = true
-            }
-        }
-        
+        setObserve()
         setupUI()
         sendRequest(urlString: urlString)
-    }
-    
-    deinit {
-        observation = nil
     }
     
     // MARK: - Private methods
@@ -58,6 +54,16 @@ final class WebViewController: UIViewController {
         guard let myURL = URL(string: urlString) else { return }
         let myRequest = URLRequest(url: myURL)
         webView.load(myRequest)
+    }
+    
+    private func setObserve() {
+        observation = webView.observe(\.estimatedProgress, options: [.new]) { [weak self] _, _ in
+            guard let self = self else { return }
+            self.progressView.progress = Float(self.webView.estimatedProgress)
+            if self.progressView.progress == 1.0 {
+                self.progressView.isHidden = true
+            }
+        }
     }
     
     @objc private func backButtonAction() {
@@ -98,6 +104,7 @@ extension WebViewController: WKNavigationDelegate {
 private extension WebViewController {
     
     func setupUI() {
+        view.backgroundColor = .red
         view = webView
         view.addSubview(toolBar)
         toolBar.items = [

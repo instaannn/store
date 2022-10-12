@@ -13,9 +13,13 @@ final class Storage {
 
     // MARK: - Public properties
     
-    static var shared = Storage()
+    static let shared = Storage()
 
-    lazy var defaults = UserDefaults.standard
+    let defaults = UserDefaults.standard
+    
+    // MARK: - Initializers
+    
+    private init() { }
 
     // MARK: - Public methods
     
