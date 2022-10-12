@@ -24,6 +24,9 @@ final class ProductViewController: UIViewController {
         static let compatibilityLabelText = "Совместимо с MacBook Pro — Евгений"
         static let rightBarButtonItemHeart = "heart"
         static let rightBarButtonItemSquare = "square.and.arrow.up"
+        static let infoButtonImageViewName = "info.circle"
+        static let pdfName = "Chistaya_arkhitektura"
+        static let pdfExtension = "pdf"
     }
     
     // MARK: - Private visual Components
@@ -40,6 +43,7 @@ final class ProductViewController: UIViewController {
     private lazy var darkGrayColorButton = makeColorButton(color: .tertiarySystemFill, xCoordinate: 213)
     private lazy var backgroungForButtonView = makeBackgroungForButtonView()
     private lazy var scrollView = UIScrollView()
+    private lazy var infoButton = makeInfoButton()
     
     // MARK: - Public properties
     
@@ -66,6 +70,25 @@ final class ProductViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         setupColorNavigationBar(onThisNavigation: true)
+    }
+    
+    // MARK: - Private methods
+
+    @objc private func openWebViewControllerAction(_ sender: UITapGestureRecognizer) {
+        guard let product = product else { return }
+        goToWebViewController(url: product.url)
+    }
+    
+    @objc private func infoButtonAction() {
+        guard let url = Bundle.main.url(forResource: Constants.pdfName, withExtension: Constants.pdfExtension) else { return }
+        goToWebViewController(url: "\(url)")
+    }
+    
+    private func goToWebViewController(url: String) {
+        let webViewController = WebViewController()
+        webViewController.urlString = url
+        webViewController.modalPresentationStyle = .pageSheet
+        present(webViewController, animated: true)
     }
 }
 
@@ -95,6 +118,7 @@ private extension ProductViewController {
         view.addSubview(lightGrayColorButton)
         view.addSubview(backgroungForButtonView)
         view.addSubview(darkGrayColorButton)
+        view.addSubview(infoButton)
     }
     
     func setupNavigationController() {
@@ -198,6 +222,9 @@ private extension ProductViewController {
             imageView.image = UIImage(named: image)
             imageView.contentMode = .scaleAspectFit
             imageView.frame = CGRect(x: xCoordinate, y: 31, width: 300, height: 200)
+            let tap = UITapGestureRecognizer(target: self, action: #selector(openWebViewControllerAction))
+            imageView.addGestureRecognizer(tap)
+            imageView.isUserInteractionEnabled = true
             scrollView.addSubview(imageView)
             xCoordinate += 412
         }
@@ -281,5 +308,14 @@ private extension ProductViewController {
         scrollView.isPagingEnabled = true
         view.addSubview(scrollView)
         return scrollView
+    }
+    
+    func makeInfoButton() -> UIButton {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: Constants.infoButtonImageViewName), for: .normal)
+        button.tintColor = .systemBlue
+        button.frame = CGRect(x: 378, y: 743, width: 17, height: 17)
+        button.addTarget(self, action: #selector(infoButtonAction), for: .touchUpInside)
+        return button
     }
 }

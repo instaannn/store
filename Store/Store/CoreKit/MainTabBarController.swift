@@ -34,6 +34,7 @@ final class MainTabBarController: UITabBarController {
     private func setupUI() {
         let buyViewController = BuyViewController()
         let forYouViewController = ForYouViewController()
+        let forYouNavigationController = UINavigationController(rootViewController: forYouViewController)
         let searchViewController = SearchViewController()
         let cartViewController = CartViewController()
         let searchNavigationController = UINavigationController(rootViewController: searchViewController)
@@ -43,7 +44,7 @@ final class MainTabBarController: UITabBarController {
             image: UIImage(systemName: Constants.buyViewControllerTabBarItemImageName),
             selectedImage: UIImage(systemName: Constants.buyViewControllerTabBarItemImageName)
         )
-        forYouViewController.tabBarItem = UITabBarItem(
+        forYouNavigationController.tabBarItem = UITabBarItem(
             title: Constants.forYouViewControllerTitle,
             image: UIImage(systemName: Constants.forYouViewControllerTabBarItemImageName),
             selectedImage: UIImage(systemName: Constants.forYouViewControllerTabBarItemImageName)
@@ -63,7 +64,7 @@ final class MainTabBarController: UITabBarController {
         
         viewControllers = [
             buyViewController,
-            forYouViewController,
+            forYouNavigationController,
             searchNavigationController,
             cartViewController
         ]

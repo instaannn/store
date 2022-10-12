@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8507F1B528F62914004ABFFF /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507F1B428F62914004ABFFF /* Storage.swift */; };
+		8507F1B728F634DA004ABFFF /* Chistaya_arkhitektura.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8507F1B628F634DA004ABFFF /* Chistaya_arkhitektura.pdf */; };
 		8509DA7F28F0D4FB006FBF94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509DA7E28F0D4FB006FBF94 /* AppDelegate.swift */; };
 		8509DA8128F0D4FB006FBF94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509DA8028F0D4FB006FBF94 /* SceneDelegate.swift */; };
 		8509DA8628F0D4FB006FBF94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8509DA8428F0D4FB006FBF94 /* Main.storyboard */; };
@@ -19,9 +21,12 @@
 		8509DA9C28F0DC3D006FBF94 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509DA9B28F0DC3D006FBF94 /* CartViewController.swift */; };
 		8509DA9E28F23928006FBF94 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509DA9D28F23928006FBF94 /* Product.swift */; };
 		8509DAA028F242BF006FBF94 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509DA9F28F242BF006FBF94 /* ProductViewController.swift */; };
+		8509DAD228F445E0006FBF94 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509DAD128F445DF006FBF94 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8507F1B428F62914004ABFFF /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		8507F1B628F634DA004ABFFF /* Chistaya_arkhitektura.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Chistaya_arkhitektura.pdf; sourceTree = "<group>"; };
 		8509DA7B28F0D4FB006FBF94 /* Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Store.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8509DA7E28F0D4FB006FBF94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8509DA8028F0D4FB006FBF94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +41,7 @@
 		8509DA9B28F0DC3D006FBF94 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		8509DA9D28F23928006FBF94 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		8509DA9F28F242BF006FBF94 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		8509DAD128F445DF006FBF94 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +82,13 @@
 				8509DAB628F30985006FBF94 /* SearchViewController */,
 				8509DAB928F309A5006FBF94 /* CartViewController */,
 				8509DABA28F309B4006FBF94 /* ProductViewController */,
+				8509DAD028F445D3006FBF94 /* WebViewController */,
 				8509DAB328F305D9006FBF94 /* CoreKit */,
 				8509DA8728F0D4FD006FBF94 /* Assets.xcassets */,
 				8509DA8928F0D4FD006FBF94 /* LaunchScreen.storyboard */,
 				8509DA8C28F0D4FD006FBF94 /* Info.plist */,
+				8507F1B428F62914004ABFFF /* Storage.swift */,
+				8507F1B628F634DA004ABFFF /* Chistaya_arkhitektura.pdf */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -149,6 +158,14 @@
 			path = ProductViewController;
 			sourceTree = "<group>";
 		};
+		8509DAD028F445D3006FBF94 /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8509DAD128F445DF006FBF94 /* WebViewController.swift */,
+			);
+			path = WebViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8509DA8B28F0D4FD006FBF94 /* LaunchScreen.storyboard in Resources */,
+				8507F1B728F634DA004ABFFF /* Chistaya_arkhitektura.pdf in Resources */,
 				8509DA8828F0D4FD006FBF94 /* Assets.xcassets in Resources */,
 				8509DA8628F0D4FB006FBF94 /* Main.storyboard in Resources */,
 			);
@@ -243,8 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8509DA9A28F0DC04006FBF94 /* SearchViewController.swift in Sources */,
+				8507F1B528F62914004ABFFF /* Storage.swift in Sources */,
 				8509DA9E28F23928006FBF94 /* Product.swift in Sources */,
 				8509DA9628F0DBCA006FBF94 /* BuyViewController.swift in Sources */,
+				8509DAD228F445E0006FBF94 /* WebViewController.swift in Sources */,
 				8509DA9828F0DBE7006FBF94 /* ForYouViewController.swift in Sources */,
 				8509DA9C28F0DC3D006FBF94 /* CartViewController.swift in Sources */,
 				8509DA7F28F0D4FB006FBF94 /* AppDelegate.swift in Sources */,
