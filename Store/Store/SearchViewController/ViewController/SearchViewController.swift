@@ -48,22 +48,26 @@ final class SearchViewController: UIViewController {
         Product(
             name: Constants.caseBlackName,
             imageNames: Constants.caseBlackImageNames,
-            price: Constants.caseBlackPrice
+            price: Constants.caseBlackPrice,
+            url: "https://re-store.ru/catalog/BFTMB13-BK/"
         ),
         Product(
             name: Constants.sportStrapName,
             imageNames: Constants.sportStrapImageNames,
-            price: Constants.sportStrapPrice
+            price: Constants.sportStrapPrice,
+            url: "https://re-store.ru/catalog/MJ4V3ZM-A/"
         ),
         Product(
             name: Constants.caseBrownName,
             imageNames: Constants.caseBrownImageNames,
-            price: Constants.caseBrownPrice
+            price: Constants.caseBrownPrice,
+            url: "https://re-store.ru/catalog/BST755117/"
         ),
         Product(
             name: Constants.iPhoneName,
             imageNames: Constants.iPhoneImageNames,
-            price: Constants.iPhonePrice
+            price: Constants.iPhonePrice,
+            url: "https://re-store.ru/catalog/10112128BLU/"
         )
     ]
 
