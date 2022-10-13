@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8507F1B528F62914004ABFFF /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507F1B428F62914004ABFFF /* Storage.swift */; };
 		8507F1B728F634DA004ABFFF /* Chistaya_arkhitektura.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8507F1B628F634DA004ABFFF /* Chistaya_arkhitektura.pdf */; };
+		8507F1BB28F736B8004ABFFF /* ScreenOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507F1BA28F736B8004ABFFF /* ScreenOnboardingViewController.swift */; };
+		8507F1BF28F73704004ABFFF /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507F1BE28F73704004ABFFF /* Onboarding.swift */; };
+		8507F1C228F7593C004ABFFF /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507F1C128F7593C004ABFFF /* OnboardingPageViewController.swift */; };
 		8509DA7F28F0D4FB006FBF94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509DA7E28F0D4FB006FBF94 /* AppDelegate.swift */; };
 		8509DA8128F0D4FB006FBF94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509DA8028F0D4FB006FBF94 /* SceneDelegate.swift */; };
 		8509DA8628F0D4FB006FBF94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8509DA8428F0D4FB006FBF94 /* Main.storyboard */; };
@@ -27,6 +30,9 @@
 /* Begin PBXFileReference section */
 		8507F1B428F62914004ABFFF /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		8507F1B628F634DA004ABFFF /* Chistaya_arkhitektura.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Chistaya_arkhitektura.pdf; sourceTree = "<group>"; };
+		8507F1BA28F736B8004ABFFF /* ScreenOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenOnboardingViewController.swift; sourceTree = "<group>"; };
+		8507F1BE28F73704004ABFFF /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		8507F1C128F7593C004ABFFF /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		8509DA7B28F0D4FB006FBF94 /* Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Store.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8509DA7E28F0D4FB006FBF94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8509DA8028F0D4FB006FBF94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +61,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8507F1B928F735FE004ABFFF /* ScreenOnboardingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8507F1BD28F736C8004ABFFF /* Model */,
+				8507F1BC28F736BD004ABFFF /* ViewController */,
+			);
+			path = ScreenOnboardingViewController;
+			sourceTree = "<group>";
+		};
+		8507F1BC28F736BD004ABFFF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8507F1BA28F736B8004ABFFF /* ScreenOnboardingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8507F1BD28F736C8004ABFFF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8507F1BE28F73704004ABFFF /* Onboarding.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8507F1C028F75930004ABFFF /* OnboardingPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8507F1C128F7593C004ABFFF /* OnboardingPageViewController.swift */,
+			);
+			path = OnboardingPageViewController;
+			sourceTree = "<group>";
+		};
 		8509DA7228F0D4FA006FBF94 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +122,8 @@
 				8509DAB928F309A5006FBF94 /* CartViewController */,
 				8509DABA28F309B4006FBF94 /* ProductViewController */,
 				8509DAD028F445D3006FBF94 /* WebViewController */,
+				8507F1B928F735FE004ABFFF /* ScreenOnboardingViewController */,
+				8507F1C028F75930004ABFFF /* OnboardingPageViewController */,
 				8509DAB328F305D9006FBF94 /* CoreKit */,
 				8509DA8728F0D4FD006FBF94 /* Assets.xcassets */,
 				8509DA8928F0D4FD006FBF94 /* LaunchScreen.storyboard */,
@@ -264,9 +305,12 @@
 				8507F1B528F62914004ABFFF /* Storage.swift in Sources */,
 				8509DA9E28F23928006FBF94 /* Product.swift in Sources */,
 				8509DA9628F0DBCA006FBF94 /* BuyViewController.swift in Sources */,
+				8507F1C228F7593C004ABFFF /* OnboardingPageViewController.swift in Sources */,
 				8509DAD228F445E0006FBF94 /* WebViewController.swift in Sources */,
 				8509DA9828F0DBE7006FBF94 /* ForYouViewController.swift in Sources */,
 				8509DA9C28F0DC3D006FBF94 /* CartViewController.swift in Sources */,
+				8507F1BB28F736B8004ABFFF /* ScreenOnboardingViewController.swift in Sources */,
+				8507F1BF28F73704004ABFFF /* Onboarding.swift in Sources */,
 				8509DA7F28F0D4FB006FBF94 /* AppDelegate.swift in Sources */,
 				8509DA8128F0D4FB006FBF94 /* SceneDelegate.swift in Sources */,
 				8509DAA028F242BF006FBF94 /* ProductViewController.swift in Sources */,

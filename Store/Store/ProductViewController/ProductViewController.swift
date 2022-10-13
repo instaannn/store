@@ -80,7 +80,10 @@ final class ProductViewController: UIViewController {
     }
     
     @objc private func infoButtonAction() {
-        guard let url = Bundle.main.url(forResource: Constants.pdfName, withExtension: Constants.pdfExtension) else { return }
+        guard let url = Bundle.main.url(
+            forResource: Constants.pdfName,
+            withExtension: Constants.pdfExtension
+        ) else { return }
         goToWebViewController(url: "\(url)")
     }
     

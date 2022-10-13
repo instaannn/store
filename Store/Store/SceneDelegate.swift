@@ -16,5 +16,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         _ scene: UIScene,
         willConnectTo session: UISceneSession,
         options connectionOptions: UIScene.ConnectionOptions
-    ) { }
+    ) {
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        window = UIWindow(windowScene: windowScene)
+        window?.backgroundColor = .white
+        // здесь тоже нужно выносить в константу?
+        if !Storage.shared.checkOnboarding(forKey: "key") {
+            window?.rootViewController = OnboardingPageViewController(
+                transitionStyle: .scroll,
+                navigationOrientation: .horizontal
+            )
+        } else {
+            window?.rootViewController = MainTabBarController()
+        }
+        
+        window?.makeKeyAndVisible()
+    }
 }
