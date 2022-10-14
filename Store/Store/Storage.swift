@@ -27,11 +27,20 @@ final class Storage {
         defaults.set(image, forKey: forKey)
     }
     
+    func saveOnboarding(forKey: String) {
+        defaults.setValue(true, forKey: forKey)
+    }
+    
     func checkAvatar(forKey: String) -> UIImage? {
         guard let dataImage = defaults.object(forKey: forKey) as? Data,
               let image = UIImage(data: dataImage) else {
             return UIImage(named: forKey)
         }
         return image
+    }
+    
+    func checkOnboarding(forKey: String) -> Bool {
+        let onboarding = defaults.bool(forKey: forKey)
+        return onboarding
     }
 }
