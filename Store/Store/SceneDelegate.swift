@@ -10,6 +10,12 @@ import UIKit
 /// SceneDelegate
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let onboardingKey = "key"
+    }
+    
     var window: UIWindow?
     
     func scene(
@@ -21,8 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .white
-        // здесь тоже нужно выносить в константу?
-        if !Storage.shared.checkOnboarding(forKey: "key") {
+        if !Storage.shared.checkOnboarding(forKey: Constants.onboardingKey) {
             window?.rootViewController = OnboardingPageViewController(
                 transitionStyle: .scroll,
                 navigationOrientation: .horizontal

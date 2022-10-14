@@ -13,7 +13,7 @@ final class ScreenOnboardingViewController: UIViewController {
     // MARK: - Constants
     
     private enum Constants {
-        static let darkVioletColor = "darkViolet"
+        static let darkVioletColorName = "darkViolet"
     }
     
     // MARK: - Private visual components
@@ -45,9 +45,7 @@ final class ScreenOnboardingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UILabel.animate(withDuration: 2) {
-            self.setAlpha(number: 1)
-        }
+        addAnimate()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -60,6 +58,12 @@ final class ScreenOnboardingViewController: UIViewController {
     private func setAlpha(number: CGFloat) {
         titleLabel.alpha = number
         subtitleLabel.alpha = number
+    }
+    
+    private func addAnimate() {
+        UILabel.animate(withDuration: 2) {
+            self.setAlpha(number: 1)
+        }
     }
 }
 
